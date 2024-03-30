@@ -24,8 +24,7 @@ class PracticeApplicationTests {
             hashMap.put(cha, count == null ? 1 : count + 1);
         }
 
-        System.out.println(hashMap);
-
+        System.out.println();
     }
 
 }
