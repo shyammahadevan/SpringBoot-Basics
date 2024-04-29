@@ -1,27 +1,30 @@
 package com.example.practice.Practice.Entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import org.hibernate.id.factory.internal.AutoGenerationTypeStrategy;
 
 @Entity
 public class Customer {
 
     @Id
-    @GeneratedValue
-    private int id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name="customer_id")
+    private Long customerId;
 
     private String name;
 
     private String email;
 
-    public int getId() {
-        return id;
+    @Column(name="mobile_number")
+    private String mobileNumber;
+
+
+    public Long getCustomerId() {
+        return customerId;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setCustomerId(Long customerId) {
+        this.customerId = customerId;
     }
 
     public String getName() {
@@ -38,5 +41,13 @@ public class Customer {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getMobileNumber() {
+        return mobileNumber;
+    }
+
+    public void setMobileNumber(String mobileNumber) {
+        this.mobileNumber = mobileNumber;
     }
 }

@@ -1,6 +1,6 @@
 package com.example.practice.Practice.Controller;
 
-import com.example.practice.Practice.Controller.DAO.CustomerRepository;
+import com.example.practice.Practice.DAO.CustomerRepository;
 import com.example.practice.Practice.Entity.Customer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -22,7 +22,7 @@ public class CustomerController {
         return customerRepository.save(customer);
     }
 
-    @GetMapping("getCustomers")
+    @GetMapping("/getCustomers")
     public List<Customer> getCustomers(){
         return customerRepository.findAll();
     }
